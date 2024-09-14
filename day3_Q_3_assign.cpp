@@ -54,6 +54,14 @@ public:
         cout<<"City :"<<city<<endl;
         cout<<"Pin No :"<<pin<<endl;
     }
+
+     void display1()
+    {
+        cout<<"Buiding name :"<<building<<endl;
+        cout<<"Street :"<<street<<endl;
+        cout<<"City :"<<city<<endl;
+        cout<<"Pin No :"<<pin<<endl;
+    }
 };
 int main()
 {
