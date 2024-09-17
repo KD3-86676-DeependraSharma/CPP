@@ -55,14 +55,15 @@ void accept()
     cin >> name;
     cout << "Enter the address - ";
     cin >> address;
+    cout<<"Date of Birth :";
     dob.acceptDate();
 }
 void display()
 {
-    cout<<"*****************************************"<<endl;
     cout<<"Person Detail :"<<endl<<"Name :"<<name<<endl <<"Address :"<<address<<endl;
     cout<<"Date of Birth :";
     dob.DisplayDate();
+
 }
 };
 class Employee :public Person
@@ -91,6 +92,8 @@ Employee(int empid,double salary,string dept,string name,string address):Person(
         cout << "Enter empid - ";
         cin >> empid;
         Person::accept();
+        cout << "Enter emp DOJ - ";
+        doj.acceptDate();
         cout << "Enter empsalary - ";
         cin >> salary;
         cout << "Enter empdept - ";
@@ -99,8 +102,11 @@ Employee(int empid,double salary,string dept,string name,string address):Person(
     }
     void display()
     {
+         cout<<"*****************************************"<<endl;
         cout << "Empid - " << empid << endl;
         Person::display();
+        cout<<"Date of joining";
+        doj.DisplayDate();
         cout << "Emp Salary - " << salary << endl;
         cout << "Emp Dept " << dept << endl;
     }
