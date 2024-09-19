@@ -83,7 +83,7 @@ void display()
     {
         cout<<"Account Type = DMAT"<<endl;
     }
-    break;
+        break;
     }
     // cout<<"Account Type :"<<Atype<<endl;
     cout<<"Account Balance :"<<balance<<endl;
@@ -155,8 +155,18 @@ int main()
                 cin >> amt;
                 for(int i=0;i<5;i++)
                 {
-                    if(arr[i]->accno == acno){
-                        arr[i]->deposit(amt);
+                    if(arr[i]->accno == acno)
+                    {
+                        try
+                        {
+                            arr[i]->deposit(amt);
+                        }
+                        catch(InSufficientFundsException e)
+                        {
+                           e.display();
+                        }
+                    // if(arr[i]->accno == acno){
+                    //     arr[i]->deposit(amt);
                     }
                 }
             }
@@ -169,8 +179,16 @@ int main()
                 cin >> amt;
                 for(int i=0;i<5;i++)
                 {
-                    if(arr[i]->accno == acno){
-                        arr[i]->withdraw(amt);
+                    if(arr[i]->accno == acno)
+                    {
+                        try
+                        {
+                            arr[i]->withdraw(amt);
+                        }
+                        catch(InSufficientFundsException e)
+                        {
+                           e.display();
+                        }
                     }
                 }
             }
